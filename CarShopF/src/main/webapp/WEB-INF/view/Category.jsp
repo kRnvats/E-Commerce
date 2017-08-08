@@ -10,7 +10,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 <sp:form action="addCategory" method="POST" modelAttribute="category">
 <c:if test="${not empty category.categoryName}">
 Category ID    <sp:input path="categoryID" readOnly="true" disabled="true"/>
@@ -19,16 +18,12 @@ Category ID    <sp:input path="categoryID" readOnly="true" disabled="true"/>
 Cat Name<sp:input path="categoryName"/>
 Cat Desc<sp:input path="categoryDesc"/>
 <c:if test="${empty category.categoryName}">
-        <sp:button class="btn btn-success" value="submit">Register</sp:button>
+        <sp:button class="btn btn-success" value="submit">Submit</sp:button>
     </c:if>
     <c:if test="${not empty category.categoryName}">
         <sp:button class="btn btn-success" value="submit">Update</sp:button>
     </c:if>
-
-
-
 </sp:form>
-
 <c:if test="${not empty categoryList }">
 <table width="50%"border="1">
 <tr>
@@ -41,12 +36,7 @@ Cat Desc<sp:input path="categoryDesc"/>
 <td>${c.categoryDesc }</td>
 <td><a href="<c:url value='updateCategory/${c.categoryID}'/>">Edit /</a> 
 <a href="<c:url value='deleteCategory/${c.categoryID}'/>"> Delete</a></td></tr>
-
-
-
 </c:forEach>
-
-
 </table>
 </c:if>
 </body>

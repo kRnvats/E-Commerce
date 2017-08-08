@@ -15,6 +15,7 @@ public class Category {
 private int categoryID;
 private String categoryName;
 private String categoryDesc;
+
 public int getCategoryID() {
 	return categoryID;
 }
@@ -33,5 +34,4 @@ public String getCategoryDesc() {
 public void setCategoryDesc(String categoryDesc) {
 	this.categoryDesc = categoryDesc;
 }
-
 }

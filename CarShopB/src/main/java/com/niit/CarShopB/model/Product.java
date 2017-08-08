@@ -1,6 +1,6 @@
 package com.niit.CarShopB.model;
 
-import java.io.Serializable;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,12 +13,14 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Component
-public class Product implements Serializable {
+public class Product  {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	int productId;
-	String productName;
+	private int productId;
+	private String productName;
+	private int productCost;
+	
 	@Transient
 	MultipartFile image;
 	public int getProductId() {
@@ -32,6 +34,12 @@ public class Product implements Serializable {
 	}
 	public void setProductName(String productName) {
 		this.productName = productName;
+	}
+	public int getProductCost() {
+		return productCost;
+	}
+	public void setProductCost(int productCost) {
+		this.productCost = productCost;
 	}
 	public MultipartFile getImage() {
 		return image;

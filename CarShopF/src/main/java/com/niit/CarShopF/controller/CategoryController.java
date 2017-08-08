@@ -30,17 +30,17 @@ public class CategoryController {
 	    {
 	    	categoryDao.updateCategory(c);
 	    }
-		return "redirect:/Category";
+		return "category";
 	}
-	@RequestMapping(value="/updateCategory/{categoryTd}")
+	@RequestMapping(value="/updateCategory/{categoryId}")
 		public String updatecategory(@PathVariable("categoryId")Integer catid, Model model)
 		{
 			model.addAttribute("category",categoryDao.categoryByid(catid));
 			model.addAttribute("categoryList",categoryDao.getAllCategory());
 			return  "Category";
 		}
-	@RequestMapping(value="/deleteCategory/{catId}")
-	public String deletecategory(@PathVariable("catId")Integer catid,Model model)
+	@RequestMapping(value="/deleteCategory/{categoryId}")
+	public String deletecategory(@PathVariable("categoryId")Integer catid,Model model)
 	{
 			model.addAttribute("category",categoryDao.categoryByid(catid));
 			categoryDao.deleteCategory(catid);

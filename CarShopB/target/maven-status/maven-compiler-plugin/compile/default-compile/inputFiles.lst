@@ -1,8 +1,10 @@
 C:\Users\SAM SUNG\workspace\CarShopB\src\main\java\com\niit\CarShopB\dao\CategoryDaoImpl.java
-C:\Users\SAM SUNG\workspace\CarShopB\src\main\java\com\niit\CarShopB\dao\package-info.java
+C:\Users\SAM SUNG\workspace\CarShopB\src\main\java\com\niit\CarShopB\dao\ProductDaoImpl.java
 C:\Users\SAM SUNG\workspace\CarShopB\src\main\java\com\niit\CarShopB\App.java
 C:\Users\SAM SUNG\workspace\CarShopB\src\main\java\com\niit\CarShopB\model\package-info.java
 C:\Users\SAM SUNG\workspace\CarShopB\src\main\java\com\niit\CarShopB\dao\CategoryDao.java
+C:\Users\SAM SUNG\workspace\CarShopB\src\main\java\com\niit\CarShopB\dao\ProductDao.java
 C:\Users\SAM SUNG\workspace\CarShopB\src\main\java\com\niit\CarShopB\config\HibernateConfig.java
 C:\Users\SAM SUNG\workspace\CarShopB\src\main\java\com\niit\CarShopB\config\package-info.java
 C:\Users\SAM SUNG\workspace\CarShopB\src\main\java\com\niit\CarShopB\model\Category.java
+C:\Users\SAM SUNG\workspace\CarShopB\src\main\java\com\niit\CarShopB\model\Product.java
