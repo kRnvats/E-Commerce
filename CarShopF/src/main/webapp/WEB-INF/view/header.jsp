@@ -1,6 +1,7 @@
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+     <%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,8 @@
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
     <%@include file="header.css" %>
-
+  
+   
 .navbar-brand { position: relative; z-index: 2; }
 
 .navbar-nav.navbar-right .btn { position: relative; z-index: 2; padding: 4px 20px; margin: 10px auto; transition: transform 0.3s; }
@@ -76,6 +78,7 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+
     <!-- Second navbar for search -->
     <nav class="navbar navbar-inverse">
       <div class="container">
@@ -87,7 +90,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Brand</a>
+          
+          <a class="navbar-brand" href="brand">Brand</a>
         </div>
     
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -95,10 +99,10 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="/">Home</a></li>
             <li><a href="product">Product</a></li>
-            <li><a href="category">Category</a></li>
+            <li><a href="Category">Category</a></li>
             <li><a href="service">Service</a></li>
             <li><a href="powerparts">POWERPARTS</a></li>
-            <li><a href="#">POWERWEAR</a></li>
+            <li><a href="powerwear">POWERWEAR</a></li>
             <li>
               <a class="btn btn-default btn-outline btn-circle collapsed"  data-toggle="collapse" href="#nav-collapse3" aria-expanded="false" aria-controls="nav-collapse3">Search</a>
             </li>

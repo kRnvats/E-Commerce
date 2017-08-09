@@ -124,8 +124,8 @@ li { list-style-type:none;}
 <div class="col-xs-12">
 
     <div class="page-header">
-        <h3>Bootstrap 3.3.0</h3>
-        <p>Responsive Moving Box Carousel Demo</p>
+        <h3>Categories</h3>
+        <p>PowerParts</p>
     </div>
         
     <div class="carousel slide" id="myCarousel">

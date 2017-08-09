@@ -38,7 +38,7 @@ public class ProductController {
 	    	ServletContext context=s.getServletContext();
 	    	String filelocation=context.getRealPath("/resources/images");
 	    	System.out.println(filelocation);
-	    	String filename=filelocation+"\\"+p.getProductId()+".jsp";
+	    	String filename=filelocation+"\\"+p.getProductId()+".jpg";
 	    	System.out.println(filename);
 	    	try{
 	    		byte b[]=m.getBytes();
