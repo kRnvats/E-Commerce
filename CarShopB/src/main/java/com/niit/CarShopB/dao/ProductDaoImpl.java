@@ -48,16 +48,19 @@ public class ProductDaoImpl implements ProductDao{
 	public Product ProductByid(int pid)
 	{
 		Session s=sessionFactory.getCurrentSession();
-		Query<Product> q=s.createQuery("from Product where productID="+pid);
+		Query<Product> q=s.createQuery("from Product where productId="+pid);
 		Product plist=(Product)q.getSingleResult();
 		return plist;
 		
 	}
 
+	
+	}
+
 
 	
 
-}
+
 
 
 

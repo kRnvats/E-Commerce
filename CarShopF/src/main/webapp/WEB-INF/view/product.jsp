@@ -3,7 +3,7 @@
     <%@ page isELIgnored="false" %>
     
     <%@taglib uri="http://www.springframework.org/tags/form" prefix="sp" %>
-    <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,14 +15,31 @@ Product Page
 
 <sp:form action="addProduct" method="post" modelAttribute="product" enctype="Multipart/form-data">
 <c:if test="${not empty product.productName}">
-Id<sp:input path="productId" readonly="true" disabled="true"/>
+Product Id<sp:input path="productId" readonly="true" disabled="true"/>
 </c:if>
-Name<sp:input path="productName"/>
-Cost<sp:input path="productCost"/>
+Product Name<sp:input path="productName"/>
+Product Cost<sp:input path="productCost"/>
 <sp:input type="file" path="image"/>
 <sp:button type="submit">submit</sp:button>
 </sp:form>
 
+
+<c:if test="${not empty productList }">
+<table width="50%" border="1">
+<tr>
+<th>ID</th><th>Product Name</th><th>Product Cost</th><th>Image</th><th>Action</th>
+</tr>
+<c:forEach items="${productList}" var="c">
+<tr><td>${c.productId}</td>
+<td>${c.productName }</td>
+<td>${c.productCost }</td>
+<td><img src="${pageContext.request.contextPath}/resources/images/${c.productId}.jpg"/></td>
+<td><a href="<c:url value='/updateProduct/${c.productId }'/>">Edit/<a href="<c:url value='/deleteProduct/${c.productId}'/>">Delete</a></a>
+</tr>
+</c:forEach>
+
+</table>
+</c:if>
 
 
 

@@ -48,7 +48,7 @@ public class CategoryDaoImpl implements CategoryDao{
 	public Category categoryByid(int catid)
 	{
 		Session s=sessionFactory.getCurrentSession();
-		Query<Category> q=s.createQuery("from Category where categoryID="+catid);
+		Query<Category> q=s.createQuery("from Category where categoryId="+catid);
 		Category catlist=(Category)q.getSingleResult();
 		return catlist;
 		
