@@ -18,7 +18,7 @@
 	
 </head>
 <body>
-<form>
+<sp:form action="${pageContext.request.contextPath }/addUser" method="POST" modelAttribute="user">
 <div class="container-fluid">
     <section class="container">
 		<div class="container-page">				
@@ -35,83 +35,75 @@
 					<input type="text" name="password" class="form-control" id="" value="">
 				</div>
 				
-				<div class="form-group col-lg-6">
-					<label>Repeat Password</label>
-					<input type="text" name="password" class="form-control" id="" value="">
-				</div>
 								
 				<div class="form-group col-lg-6">
 					<label>Email Address</label>
 					<input type="text" name="email" class="form-control" id="" value="">
 				</div>
 				
-				<div class="form-group col-lg-6">
-					<label>Repeat Email Address</label>
-					<input type="text" name="email" class="form-control" id="" value="">
-				</div>
 <br>
 <br>
 	<h2> BillingAddress</h2>			
 				<div class="form-group col-lg-12">
 					<label>StreetName</label>
-					<input type="text" name="Streetname" class="form-control" id="" value="">
+					<input type="text" name="billingDetails.StreetName" class="form-control" id="" value="">
 				</div>	
 				
 				<div class="form-group col-lg-12">
 					<label>ApartNo</label>
-					<input type="text" name="ApartNo" class="form-control" id="" value="">
+					<input type="text" name="billingDetails.ApartNo" class="form-control" id="" value="">
 				</div>
 				
 				<div class="form-group col-lg-12">
 					<label>City</label>
-					<input type="text" name="City" class="form-control" id="" value="">
+					<input type="text" name="billingDetails.City" class="form-control" id="" value="">
 				</div>
 				
 				<div class="form-group col-lg-12">
 					<label>State</label>
-					<input type="text" name="State" class="form-control" id="" value="">
+					<input type="text" name="billingDetails.State" class="form-control" id="" value="">
 				</div>
 				
 				<div class="form-group col-lg-12">
 					<label>Country</label>
-					<input type="text" name="Country" class="form-control" id="" value="">
+					<input type="text" name="billingDetails.Country" class="form-control" id="" value="">
 				</div>
 				
 				<div class="form-group col-lg-12">
 					<label>Zipcode</label>
-					<input type="text" name="Zipcode" class="form-control" id="" value="">
+					<input type="text" name="billingDetails.Zipcode" class="form-control" id="" value="">
 				</div>
 				<br>
 				
 			<h2>ShippingAddress</h2>
 			<div class="form-group col-lg-12">
 					<label>StreetName</label>
-					<input type="text" name="StreetName" class="form-control" id="" value="">
+					<input type="text" name="shippingDetails.StreetName" class="form-control" id="" value="">
 				</div>	
 				
 				<div class="form-group col-lg-12">
 					<label>ApartNo</label>
-					<input type="text" name="ApartNo" class="form-control" id="" value="">
+					<input type="text" name="shippingDetails.ApartNo" class="form-control" id="" value="">
 				</div>
 				
 				<div class="form-group col-lg-12">
 					<label>City</label>
-					<input type="text" name="City" class="form-control" id="" value="">
+					<input type="text" name="shippingDetails.City" class="form-control" id="" value="">
 				</div>
 				
 				<div class="form-group col-lg-12">
 					<label>State</label>
-					<input type="text" name="State" class="form-control" id="" value="">
+					<input type="text" name="shippingDetails.State" class="form-control" id="" value="">
 				</div>
 				
 				<div class="form-group col-lg-12">
 					<label>Country</label>
-					<input type="text" name="Country" class="form-control" id="" value="">
+					<input type="text" name="shippingDetails.Country" class="form-control" id="" value="">
 				</div>
 				
 				<div class="form-group col-lg-12">
 					<label>Zipcode</label>
-					<input type="text" name="Zipcode" class="form-control" id="" value="">
+					<input type="text" name="shippingDetails.Zipcode" class="form-control" id="" value="">
 				</div>
 				<div class="col-sm-6">
 				<input type="checkbox" class="checkbox" />Sigh up for our newsletter
@@ -149,6 +141,6 @@
 <script type="text/javascript">
 
 </script>
-</form>
+</sp:form>
 </body>
 </html>

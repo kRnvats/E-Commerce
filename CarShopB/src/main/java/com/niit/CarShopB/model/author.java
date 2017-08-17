@@ -4,13 +4,16 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import org.springframework.stereotype.Component;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 @Entity
 @Component
-public class author {
+public class Author {
 @Id
 @Column
-private String authorId;
+@GeneratedValue(strategy=GenerationType.AUTO)
+private int authorId;
 
 @Column(unique = true)
 private String authorname;
@@ -18,10 +21,11 @@ private String authorname;
 @Column
 private String rolename;
 
-public String getAuthorId() {
+
+public int getAuthorId() {
 	return authorId;
 }
-public void setAuthorId(String authorId) {
+public void setAuthorId(int authorId) {
 	this.authorId = authorId;
 }
 public String getAuthorname() {

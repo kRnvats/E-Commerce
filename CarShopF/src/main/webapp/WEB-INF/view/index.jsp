@@ -27,8 +27,7 @@
    
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
-
-      <div class="item active">
+		      <div class="item active">
  
         <img src="resources/images/offroad-2018jumbotron.jpg" alt="KTM" style="width:100%;">
         <img src="resources/images/ktm-orange-cup---home-page-tile-720x720.jpg" alt="KTM" style="width:100%;">
@@ -37,7 +36,7 @@
           <h3>KTM FACTORY RACER</h3>
           <p>KEEP CALM AND RIDE KTM!</p>
         </div>
-      </div>
+         </div>
 
       <div class="item">
         <img src="resources/images/873824.jpg" alt="enfield" style="width:100%;">

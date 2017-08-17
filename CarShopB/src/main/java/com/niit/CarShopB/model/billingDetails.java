@@ -1,35 +1,33 @@
     package com.niit.CarShopB.model;
 	import java.io.Serializable;
-
 	import javax.persistence.Entity;
 	import javax.persistence.GeneratedValue;
 	import javax.persistence.GenerationType;
 	import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import com.niit.CarShopB.model.Customer;
-
+    import javax.persistence.JoinColumn;
+    import javax.persistence.OneToOne;
+    import com.niit.CarShopB.model.User;
 	import org.springframework.stereotype.Component;
 
-	@Entity
+		@Entity
 		@Component
-		public class billingDetails implements Serializable {
+		public class BillingDetails implements Serializable {
 
 			private static final long serialVersionUID = 127L;
 
-			public Customer getCustomer() {
-				return customer;
+			public User getUser() {
+				return user;
 			}
 
-			public void setCustomer(Customer customer) {
-				this.customer = customer;
+			public void setUser(User user) {
+				this.user = user;
 			}
 
 			@Id
 			@GeneratedValue(strategy = GenerationType.AUTO)
 			private int billingAddressId;
 			private String StreetName;
-			private String ApartNo;
+			private int ApartNo;
 			private String City;
 			private String State;
 			private String Country;
@@ -37,7 +35,7 @@ import com.niit.CarShopB.model.Customer;
 
 			@OneToOne
 			@JoinColumn
-			private Customer customer;
+			private User user;
 			
 			public int getBillingAddressId() {
 				return billingAddressId;
@@ -55,11 +53,11 @@ import com.niit.CarShopB.model.Customer;
 				this.StreetName = streetName;
 			}
 
-			public String getApartNo() {
+			public int getApartNo() {
 				return ApartNo;
 			}
 
-			public void setApartNo(String apartNo) {
+			public void setApartNo(int apartNo) {
 				this.ApartNo = apartNo;
 			}
 

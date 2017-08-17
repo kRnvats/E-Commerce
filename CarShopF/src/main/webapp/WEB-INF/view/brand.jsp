@@ -78,7 +78,7 @@
         </div>
         <!-- End Carousel Inner -->
         <ul class="nav nav-pills nav-justified">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#">About<small>KTM</small></a></li>
+            <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="powerwear/{KTM}">About<small>KTM</small></a></li>
             <li data-target="#myCarousel" data-slide-to="1"><a href="#">About<small>ROYAL ENFIELD</small></a></li>
             <li data-target="#myCarousel" data-slide-to="2"><a href="#">About<small>HARLEY DAVIDSON</small></a></li>
             

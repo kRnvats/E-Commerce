@@ -10,10 +10,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 import org.springframework.stereotype.Component;
-import com.niit.CarShopB.model.Customer;
+import com.niit.CarShopB.model.User;
 	@Entity
 	@Component
-	public class shippingDetails implements Serializable {
+	public class ShippingDetails implements Serializable {
 
 		private static final long serialVersionUID = 127L;
 
@@ -21,7 +21,7 @@ import com.niit.CarShopB.model.Customer;
 		@GeneratedValue(strategy = GenerationType.AUTO)
 		private int shippingAddressId;
 		private String StreetName;
-		private String ApartNo;
+		private int ApartNo;
 		private String City;
 		private String State;
 		private String Country;
@@ -29,7 +29,16 @@ import com.niit.CarShopB.model.Customer;
 
 		@OneToOne
 		@JoinColumn
-		private Customer customer;
+		private User user;
+
+		
+		public User getUser() {
+			return user;
+		}
+
+		public void setUser(User user) {
+			this.user = user;
+		}
 
 		public int getShippingAddressId() {
 			return shippingAddressId;
@@ -47,11 +56,11 @@ import com.niit.CarShopB.model.Customer;
 			this.StreetName = streetName;
 		}
 
-		public String getApartNo() {
+		public int getApartNo() {
 			return ApartNo;
 		}
 
-		public void setApartNo(String apartNo) {
+		public void setApartNo(int apartNo) {
 			this.ApartNo = apartNo;
 		}
 
@@ -87,18 +96,13 @@ import com.niit.CarShopB.model.Customer;
 			this.Zipcode = zipcode;
 		}
 
-		public Customer getCustomer() {
-			return customer;
-		}
-
-		public void setCustomer(Customer customer) {
-			this.customer = customer;
-		}
+		
 
 		public static long getSerialversionuid() {
 			return serialVersionUID;
 		}
 
+		
 
 
 }

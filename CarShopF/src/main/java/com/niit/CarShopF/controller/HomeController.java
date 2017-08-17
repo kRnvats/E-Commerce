@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.niit.CarShopB.dao.CategoryDao;
 import com.niit.CarShopB.dao.ProductDao;
 import com.niit.CarShopB.model.Category;
-import com.niit.CarShopB.model.Customer;
+import com.niit.CarShopB.model.User;
 import com.niit.CarShopB.model.Product;
-import com.niit.CarShopB.model.billingDetails;
-import com.niit.CarShopB.model.shippingDetails;
+import com.niit.CarShopB.model.BillingDetails;
+import com.niit.CarShopB.model.ShippingDetails;
 
 @Controller
 public class HomeController {
@@ -44,9 +44,8 @@ public class HomeController {
 	public String powerparts()
 	{
 		return"powerparts";
-		
-		
-	}
+		}
+	
 
 
 	@RequestMapping("service")
@@ -62,6 +61,12 @@ public class HomeController {
 		return "powerwear";
 		
 	}
+	@RequestMapping("ROYAL ENFIELD")
+	public String royalpowerparts()
+	{
+		return "royalpowerparts";
+		
+	}
 	
 	@RequestMapping("brand")
 	public String brand()
@@ -70,36 +75,37 @@ public class HomeController {
 		
 	}
 
-	@RequestMapping("register")
-	public String register(Model model)
 	
-	{
-		shippingDetails s = new shippingDetails();
-		billingDetails b = new billingDetails();
-		Customer c = new Customer();
-		c.setBillingDetails(b);
-		c.setShippingDetails(s);
-		model.addAttribute("customer", new Customer());
-		return "register";
-		
-	}
 	@RequestMapping("Sing in")
 	public String Signin()
 	{
 		return "login";
 		
 	}
-	
-	
-	@RequestMapping("category")
-	public String Category(Model model)
+
+	@RequestMapping("contact")
+	public String contact()
 	{
-	model.addAttribute("category", new Category());
-		return"Category";
+		return "contact";
+		
 	}
 	
 	
 
+	@RequestMapping("ktm")
+	public String ktm()
+	{
+		return"powerparts";
+		
+		
+	} 
+	
+	@RequestMapping("catgory")
+	public String category()
+	{
+		return "category";
+		
+	}
 	
 	
 
