@@ -28,38 +28,67 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
 		      <div class="item active">
- 
+ <div class="row">
+ <div class="col-sm-12 col-md-12 col-lg-12">
         <img src="resources/images/offroad-2018jumbotron.jpg" alt="KTM" style="width:100%;">
+        </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
         <img src="resources/images/ktm-orange-cup---home-page-tile-720x720.jpg" alt="KTM" style="width:100%;">
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
         <img src="resources/images/feature-vision-adventure-starts.jpg" alt="KTM" style="width:100%;">
         <div class="carousel-caption">
           <h3>KTM FACTORY RACER</h3>
           <p>KEEP CALM AND RIDE KTM!</p>
         </div>
          </div>
+         </div>
 
       <div class="item">
+      <div class="row">
+ <div class="col-sm-12 col-md-12 col-lg-12">
         <img src="resources/images/873824.jpg" alt="enfield" style="width:100%;">
+        </div></div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
         <img src="resources/images/NYevent-2014-1.jpg" alt="enfield" style="width:100%;">
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
         <img src="resources/images/continentalGT_slant-front_red_600x463_motorcycle.png" alt="enfield" style="width:100%;">
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
         <img src="resources/images/biker-royal-enfield-classic-350.jpg" alt="enfield" style="width:100%;">
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
+        <img src="resources/images/Achilles-a-Royal-Enfield-Scrambler-by-Bulleteer-Customs.jpg">
         <div class="carousel-caption">
           <h3>I NEVER LOSE.I ONLY RUN OUT OF LAPS,GAS,OR TIME. </h3>
           <p>Thank you, Chicago!</p>
         </div>
       </div>
-    
+    </div>
       <div class="item">
+        <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
         <img src="resources/images/Harley-Davidson.svg.png" alt="Harley" style="width:100%;">
+        </div></div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
         <img src="resources/images/Harley-Davidson-Street-750-Captian-America-Breakout-2-web.jpg" alt="Harley" style="width:100%;">
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
         <img src="resources/images/4.jpg" alt="Harley" style="width:100%;">
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
         <img src="resources/images/2014_Harley-Davidson_Street_750_showroom_side.jpg" alt="Harley" style="width:100%;">
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
         <img src="resources/images/harley-davidson-1905281_1920.jpg" alt="Harley" style="width:100%;">
         <div class="carousel-caption">
           <h3>NO RAIN.NO TRAFFIC. NO WORRIES.</h3>
           <p>!</p>
         </div>
       </div>
+  </div>
   
     </div>
    

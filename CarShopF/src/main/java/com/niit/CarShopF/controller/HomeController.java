@@ -76,8 +76,8 @@ public class HomeController {
 	}
 
 	
-	@RequestMapping("Sing in")
-	public String Signin()
+	@RequestMapping("login")
+	public String login()
 	{
 		return "login";
 		

@@ -1,4 +1,4 @@
-
+	
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
      <%@page isELIgnored="false"%>
@@ -40,11 +40,12 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="brand">Brand</a>
+                    <a class="navbar-brand" href="brand">BRAND</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/">Home</a></li>
+                        <li class="active"><a href="/">HOME</a></li>
+                        <li class="active"><a href="service">SERVICE</a></li>
                         <li><a href="product" target="_blank">PRODUCT</a></li>
                         <li><a href="category" target="_blank">CATEGORY</a></li>
                         <li>
@@ -60,13 +61,24 @@
                                     <a href="powerwear" class="dropdown-toggle" data-toggle="dropdown">POWERWEAR <b class="caret"></b></a>
 
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Action [KTM]</a></li>
-                                        <li><a href="#">Another action [ROYAL ENFIELD]</a></li>
-                                        <li><a href="#">Something else here [HARLEY DAVIDSON]</a></li>
+                                        <li><a href="#"> [KTM]</a></li>
+                                        <li><a href="#"> [ROYAL ENFIELD]</a></li>
+                                        <li><a href="#"> [HARLEY DAVIDSON]</a></li>
 										                                        
-                                            
+                                            </ul>
+                        <li class="active"><a href="#"></a></li>
+                        <li><a href="#" target="_blank"></a></li>
+                        <li><a href="#" target="_blank"></a></li>
+                        <li><a href="#" target="_blank"></a></li>
+                        <li><a href="#" target="_blank"></a></li>
+                        <li><a href="#" target="_blank"></a></li>
+                        <li><a href="register" target="_blank">REGISTER</a></li>
+                        <li><a href="login" target="_blank">LOGIN</a></li>
+                       
                 </div><!--/.nav-collapse -->
+                
             </div>
+        
         </div>
         							
         <script type="text/javascript">

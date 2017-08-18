@@ -29,7 +29,8 @@
 <!-- This is a very simple parallax effect achieved by simple CSS 3 multiple backgrounds, made by http://twitter.com/msurguy -->
 
 <div class="container">
-    <div class="row vertical-offset-100">
+<form action="logg" method="post">
+    <div class="row  vertical-offset-100">
     	<div class="col-md-4 col-md-offset-4">
     		<div class="panel panel-default">
 			  	<div class="panel-heading">
@@ -56,9 +57,8 @@
 			</div>
 		</div>
 	</div>
+</form>
 </div>
-<script type="text/javascript">
 
-</script>
 </body>
 </html>
