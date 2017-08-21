@@ -42,6 +42,12 @@ public class UserController {
 		return "register";
 		
 	}
+	@RequestMapping("logg")
+	public String logg()
+	{
+		return "/";
+		
+	}
 	
 }
 

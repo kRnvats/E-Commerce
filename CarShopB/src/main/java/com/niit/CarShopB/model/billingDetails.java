@@ -44,7 +44,7 @@
 			public void setBillingAddressId(int billingAddressId) {
 				this.billingAddressId = billingAddressId;
 			}
-
+			
 			public String getStreetName() {
 				return StreetName;
 			}

@@ -24,7 +24,7 @@ public class CategoryController {
 	@Autowired
 	CategoryDao categoryDao;
 	
-	@RequestMapping(value="/addCategory",method=RequestMethod.POST)
+	@RequestMapping(value="/adminaddCategory",method=RequestMethod.POST)
 	
 	public String addCategory(@ModelAttribute("category")Category c,HttpSession s)
 	{

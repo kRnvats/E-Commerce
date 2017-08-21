@@ -41,8 +41,9 @@ public class HomeController {
 	}
 	
 	@RequestMapping("powerparts")
-	public String powerparts()
+	public String powerparts(Model model)
 	{
+		model.addAttribute("productList",productDao.getAllProduct());
 		return"powerparts";
 		}
 	
@@ -56,15 +57,38 @@ public class HomeController {
 		
 	}
 	@RequestMapping("powerwear")
-	public String powerwear()
+	public String powerwear(Model model)
 	{
+		model.addAttribute("productList",productDao.getAllProduct());
 		return "powerwear";
 		
 	}
-	@RequestMapping("ROYAL ENFIELD")
-	public String royalpowerparts()
+	@RequestMapping("royalpowerwear")
+	public String royalpowerwear(Model model)
 	{
+		model.addAttribute("productList",productDao.getAllProduct());
+		return "royalpowerwear";
+		
+	}
+	@RequestMapping("harleypowerwear")
+	public String harleypowerwear(Model model)
+	{
+		model.addAttribute("productList",productDao.getAllProduct());
+		return "harleypowerwear";
+		
+	}
+	@RequestMapping("royalpowerparts")
+	public String royalpowerparts(Model model)
+	{
+		model.addAttribute("productList",productDao.getAllProduct());
 		return "royalpowerparts";
+		
+	}
+	@RequestMapping("harleypowerparts")
+	public String harleypowerparts(Model model)
+	{
+		model.addAttribute("productList",productDao.getAllProduct());
+		return "harleypowerparts";
 		
 	}
 	
@@ -100,13 +124,15 @@ public class HomeController {
 		
 	} 
 	
-	@RequestMapping("catgory")
-	public String category()
+	@RequestMapping("category")
+	public String Category(Model model)
 	{
+		model.addAttribute("categoryList",categoryDao.getAllCategory());
+		model.addAttribute("category", new Category());
 		return "category";
 		
+		
 	}
-	
 	
 
 }

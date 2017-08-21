@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+     <%@ page isELIgnored="false" %>
+    
+    <%@taglib uri="http://www.springframework.org/tags/form" prefix="sp" %>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -48,6 +53,62 @@
 <div class="container">
   
     <div class="row">
+   
+          
+        <c:forEach var="c" items="${productList}" begin="0" end="7">         
+        <div class="col-md-3">  
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4>${c.productName}</h4>
+                    <p>short thumbnail description</p>
+                    <p><a href="" class="label label-danger">Zoom</a>
+                    <a href="" class="label label-default">Download</a></p>
+                </div>
+                <img style="height:200px;width:200px;"src="${pageContext.request.contextPath }/resources/images/${c.productId }.jpg" alt="...">
+            </div>
+            
+        </div>
+                   </c:forEach>
+            
+       
+      </div>
+        <!-- <div class="col-md-3">            
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4>Thumbnail Headline</h4>
+                    <p>short thumbnail description</p>
+                    <p><a href="" class="label label-danger">Zoom</a>
+                    <a href="" class="label label-default">Download</a></p>
+                </div>
+                <img src="http://lorempixel.com/400/300/sports/2/" alt="...">
+            </div>
+        </div>
+
+        <div class="col-md-3">            
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4>Thumbnail Headline</h4>
+                    <p>short thumbnail description</p>
+                    <p><a href="" class="label label-danger">Zoom</a>
+                    <a href="" class="label label-default">Download</a></p>
+                </div>
+                <img src="http://lorempixel.com/400/300/sports/3/" alt="...">
+            </div>
+        </div>
+
+        <div class="col-md-3">            
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4>Thumbnail Headline</h4>
+                    <p>short thumbnail description</p>
+                    <p><a href="" class="label label-danger">Zoom</a>
+                    <a href="" class="label label-default">Download</a></p>
+                </div>
+                <img src="http://lorempixel.com/400/300/sports/4/" alt="...">
+            </div>  
+        </div> 
+    
+    <div class="row">
         <div class="col-md-3">            
             <div class="thumbnail">
                 <div class="caption">
@@ -95,13 +156,49 @@
                 <img src="http://lorempixel.com/400/300/sports/4/" alt="...">
             </div>  
         </div> 
-    </div>
+        </div>
+        <div class="col-md-3">            
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4>Thumbnail Headline</h4>
+                    <p>short thumbnail description</p>
+                    <p><a href="" class="label label-danger">Zoom</a>
+                    <a href="" class="label label-default">Download</a></p>
+                </div>
+                <img src="http://lorempixel.com/400/300/sports/2/" alt="...">
+            </div>
+        </div>
+
+        <div class="col-md-3">            
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4>Thumbnail Headline</h4>
+                    <p>short thumbnail description</p>
+                    <p><a href="" class="label label-danger">Zoom</a>
+                    <a href="" class="label label-default">Download</a></p>
+                </div>
+                <img src="http://lorempixel.com/400/300/sports/3/" alt="...">
+            </div>
+        </div>
+
+        <div class="col-md-3">            
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4>Thumbnail Headline</h4>
+                    <p>short thumbnail description</p>
+                    <p><a href="" class="label label-danger">Zoom</a>
+                    <a href="" class="label label-default">Download</a></p>
+                </div>
+                <img src="http://lorempixel.com/400/300/sports/4/" alt="...">
+            </div>  
+        </div> 
+        </div>
     
     <div class="row">
         <div class="col-xs-12 text-center">
             Original <a href="http://bootsnipp.com/snippets/featured/thumbnail-caption-hover-effect">Thumbnail Caption Hover Effect</a> by <a href="http://bootsnipp.com/sevenx.de">sevenx.de</a>
         </div>
-    </div>
+    </div>-->
   
 </div><!-- /.container -->
 <script type="text/javascript">

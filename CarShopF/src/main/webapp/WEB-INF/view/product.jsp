@@ -33,7 +33,7 @@ Product Cost<sp:input path="productCost"/>
 <tr><td>${c.productId}</td>
 <td>${c.productName }</td>
 <td>${c.productCost }</td>
-<td><img src="${pageContext.request.contextPath}/resources/images/${c.productId}.jpg"/></td>
+<td><img src="${pageContext.request.contextPath}/resources/images/${c.productId}.jpg" style="height:200px;width:200px;"/></td>
 <td><a href="<c:url value='/updateProduct/${c.productId }'/>">Edit/<a href="<c:url value='/deleteProduct/${c.productId}'/>">Delete</a></a>
 </tr>
 </c:forEach>

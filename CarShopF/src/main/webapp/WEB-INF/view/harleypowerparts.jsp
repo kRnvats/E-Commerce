@@ -51,7 +51,7 @@
 
 <div class="container">
  <div class="row"> 
- <c:forEach var="c" items="${productList}" begin="27" end="33">      
+ <c:forEach var="c" items="${productList}" begin="8" end="18">      
  <div class="col-md-3">            
             <div class="thumbnail">
                 <div class="caption">

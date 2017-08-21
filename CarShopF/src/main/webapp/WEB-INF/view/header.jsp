@@ -54,16 +54,16 @@
                             <ul class="dropdown-menu">
                                 <li><a href="powerparts">KTM</a></li>
                                 <li><a href="royalpowerparts">ROYAL ENFIELD</a></li>
-                                <li><a href="powerparts">HARLEY DAVIDSON</a></li>
+                                <li><a href="harleypowerparts">HARLEY DAVIDSON</a></li>
                                 </ul>
                                              
                                     <li>
                                     <a href="powerwear" class="dropdown-toggle" data-toggle="dropdown">POWERWEAR <b class="caret"></b></a>
 
                                     <ul class="dropdown-menu">
-                                        <li><a href="#"> [KTM]</a></li>
-                                        <li><a href="#"> [ROYAL ENFIELD]</a></li>
-                                        <li><a href="#"> [HARLEY DAVIDSON]</a></li>
+                                        <li><a href="powerwear"> KTM</a></li>
+                                        <li><a href="royalpowerwear"> ROYAL ENFIELD</a></li>
+                                        <li><a href="harleypowerwear"> HARLEY DAVIDSON</a></li>
 										                                        
                                             </ul>
                         <li class="active"><a href="#"></a></li>
