@@ -62,7 +62,7 @@
                     <h4>${c.productName}</h4>
                     <p>short thumbnail description</p>
                     <p><a href="" class="label label-danger">Zoom</a>
-                    <a href="" class="label label-default">Download</a></p>
+                    <a href="cart" class="label label-default">Add To Cart</a></p>
                 </div>
                 <img style="height:200px;width:200px;"src="${pageContext.request.contextPath }/resources/images/${c.productId }.jpg" alt="...">
             </div>

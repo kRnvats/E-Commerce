@@ -24,27 +24,13 @@ public class CategoryController {
 	@Autowired
 	CategoryDao categoryDao;
 	
-	@RequestMapping(value="/adminaddCategory",method=RequestMethod.POST)
+	@RequestMapping(value="/addCategory",method=RequestMethod.POST)
 	
 	public String addCategory(@ModelAttribute("category")Category c,HttpSession s)
 	{
 	    if(c.getCategoryID()==0)
 	    {
 		categoryDao.addCategory(c);
-    	MultipartFile m=c.getImage();
-    	System.out.println(m.getOriginalFilename());
-		ServletContext context=s.getServletContext();
-    	String filelocation=context.getRealPath("/resources/images");
-    	System.out.println(filelocation);
-    	String filename=filelocation+"\\"+c.getProductId()+".jpg";
-    	System.out.println(filename);
-    	try{
-    		byte b[]=m.getBytes();
-    		FileOutputStream fos=new FileOutputStream(filename);
-    		fos.write(b);
-    		fos.close();
-    	}
-    	catch (Exception e){}
 	    }
 	    
 	    else

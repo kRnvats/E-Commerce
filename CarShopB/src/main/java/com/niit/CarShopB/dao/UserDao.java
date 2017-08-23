@@ -7,4 +7,6 @@ public interface UserDao {
 
 	public java.util.List<User> getAllUsers();
 
+	public User getUserByUserName(String username);
+
 }

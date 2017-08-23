@@ -8,7 +8,7 @@
     http://www.springframework.org/schema/security/spring-security.xsd">
 
 	<http auto-config="true">
-	<intercept-url pattern="/Cart/**"
+	<intercept-url pattern="/cart/**"
 			access="hasRole('ROLE_USER')" />
 			
 	<intercept-url pattern="/myCart/**"
@@ -19,7 +19,7 @@
 	 <intercept-url pattern="/admin*" access="hasRole('ROLE_ADMIN')" />
 		<form-login login-page="/login"
 		 username-parameter="name" password-parameter="password" 
-		 login-processing-url="/logg"
+		 login-processing-url="/login"
 			authentication-failure-url="/login" />
 		<logout logout-url="/LogOut" delete-cookies="true"
 		 logout-success-url="/login?LogOut" />

@@ -66,6 +66,11 @@
 		
 		}
 
+		public User getUserByUserName(String username) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
 	}
 	
 		

@@ -47,7 +47,7 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body style="background-color:black;">
 
 <div class="container">
  <div class="row"> 
@@ -58,7 +58,7 @@
                     <h4>${c.productName}</h4>
                     <p>&#8377; ${c.productCost }</p>
                     <p><a href="" class="label label-danger">Zoom</a>
-                    <a href="" class="label label-default">Download</a></p>
+                    <a href="${pageContext.request.contextPath }/myCart/addToCart/${c.productId}" class="label label-default">Add To Cart</a></p>
                 </div>
                 <img style="height:200px;width:200px;"src="${pageContext.request.contextPath }/resources/images/${c.productId }.jpg" alt="...">
             </div>

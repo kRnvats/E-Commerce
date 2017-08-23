@@ -54,6 +54,11 @@ public class ProductDaoImpl implements ProductDao{
 		
 	}
 
+	public Product getProductId(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 	}
 

@@ -8,7 +8,8 @@ public interface ProductDao {
 	public boolean deleteProduct(int pid);
 	public boolean updateProduct(Product p);
 	List<Product>getAllProduct();
-	Product ProductByid(int pid);	
+	Product ProductByid(int pid);
+	public Product getProductId(int id);	
 	
 }
 

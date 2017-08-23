@@ -16,11 +16,22 @@ Product Page
 <sp:form action="addProduct" method="post" modelAttribute="product" enctype="Multipart/form-data">
 <c:if test="${not empty product.productName}">
 Product Id<sp:input path="productId" readonly="true" disabled="true"/>
+<sp:hidden path="productId"/>
 </c:if>
 Product Name<sp:input path="productName"/>
 Product Cost<sp:input path="productCost"/>
 <sp:input type="file" path="image"/>
+<sp:select path="categoryId">
+<c:forEach items="${categoryList}" var="c">
+		<sp:option value="${c.categoryID}">${c.categoryName}</sp:option>
+</c:forEach>
+</sp:select>
+<c:if test="${empty product.productName }">
+<sp:button value="submit">ADD</sp:button>
+</c:if>
+<c:if test="${not empty product.productName }">
 <sp:button type="submit">submit</sp:button>
+</c:if>
 </sp:form>
 
 
@@ -33,6 +44,7 @@ Product Cost<sp:input path="productCost"/>
 <tr><td>${c.productId}</td>
 <td>${c.productName }</td>
 <td>${c.productCost }</td>
+<td>${c.categoryId }</td>
 <td><img src="${pageContext.request.contextPath}/resources/images/${c.productId}.jpg" style="height:200px;width:200px;"/></td>
 <td><a href="<c:url value='/updateProduct/${c.productId }'/>">Edit/<a href="<c:url value='/deleteProduct/${c.productId}'/>">Delete</a></a>
 </tr>
@@ -40,8 +52,6 @@ Product Cost<sp:input path="productCost"/>
 
 </table>
 </c:if>
-
-
 
 </body>
 </html>

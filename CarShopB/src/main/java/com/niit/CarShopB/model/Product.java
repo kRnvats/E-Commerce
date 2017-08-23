@@ -15,18 +15,44 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Component
-public class Product  {
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+public class Product {
+	@Id	
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int productId;
 	private String productName;
-	private int productCost;
+	private String productDesc;
+	private long productCost;
 	
+
+	private String categoryId;
+	public String getCategoryId() {
+		return categoryId;
+	}
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId;
+	}
+
 	@Transient
 	MultipartFile image;
+	public MultipartFile getImage() {
+		return image;
+	}
+	public void setImage(MultipartFile image) {
+		this.image = image;
+	}
+
 	@ManyToOne
 	@JoinColumn(name="categoryId",insertable=false,updatable=false,nullable=false)
+	Category category;
+	
+	
+
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 	public int getProductId() {
 		return productId;
 	}
@@ -39,19 +65,17 @@ public class Product  {
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-	public int getProductCost() {
+	public String getProductDesc() {
+		return productDesc;
+	}
+	public void setProductDesc(String productDesc) {
+		this.productDesc = productDesc;
+	}
+	public long getProductCost() {
 		return productCost;
 	}
-	public void setProductCost(int productCost) {
+	public void setProductCost(long productCost) {
 		this.productCost = productCost;
 	}
-	public MultipartFile getImage() {
-		return image;
-	}
-	public void setImage(MultipartFile image) {
-		this.image = image;
-	}
-	
-	
-	
+
 }

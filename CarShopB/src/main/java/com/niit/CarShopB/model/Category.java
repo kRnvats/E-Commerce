@@ -1,13 +1,16 @@
 package com.niit.CarShopB.model;
-
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
-
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -30,9 +33,8 @@ public MultipartFile getImage() {
 public void setImage(MultipartFile image) {
 	this.image = image;
 }
-
-
-
+@OneToMany(mappedBy="category",fetch=FetchType.EAGER)
+Set<Product>products;
 public int getCategoryID() {
 	return categoryID;
 	

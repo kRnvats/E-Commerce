@@ -33,6 +33,8 @@ public class HomeController {
 	@RequestMapping("product")
 	public String Product(Model model)
 	{
+		model.addAttribute("categoryList",categoryDao.getAllCategory());
+
 		model.addAttribute("productList",productDao.getAllProduct());
 		model.addAttribute("product", new Product());
 		return "product";
@@ -123,7 +125,7 @@ public class HomeController {
 		
 		
 	} 
-	
+
 	@RequestMapping("category")
 	public String Category(Model model)
 	{
