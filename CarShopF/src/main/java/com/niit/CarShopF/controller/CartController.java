@@ -26,11 +26,12 @@ import com.niit.CarShopB.model.User;
 @RequestMapping("/myCart")
 @Controller
 public class CartController {
-	@Autowired(required=true)
-	private Cart cart;
-	
+
 	@Autowired
-	private CartDao cartDao;
+	private Cart cart;
+
+	@Autowired
+	private CartDao cartDAO;
 
 	
 	@Autowired
@@ -51,12 +52,13 @@ public class CartController {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String username = auth.getName();
 		String loggedInUsername = username;
-		session.setAttribute("numberProducts", cartDao.getNumberOfProducts(loggedInUsername));
-		session.setAttribute("cartList", cartDao.getCartList(loggedInUsername));
-		session.setAttribute("totalAmount", cartDao.getTotalAmount(loggedInUsername));
+		session.setAttribute("numberProducts", cartDAO.getNumberOfProducts(loggedInUsername));
+		session.setAttribute("cartList", cartDAO.getCartList(loggedInUsername));
+		session.setAttribute("totalAmount", cartDAO.getTotalAmount(loggedInUsername));
+		model.addAttribute("productList",productDao.getAllProduct());
 		model.addAttribute("categoryList",categoryDao.getAllCategory());
 		
-		return "Cart";
+		return "cart";
 	}
 
 	
@@ -68,7 +70,8 @@ public class CartController {
 			Product product = productDao.getProductId(id);
 			System.out.println(product.getProductName());
 			cart.setProductName(product.getProductName());
-			cart.setCost(product.getProductCost());
+			
+			cart.setPrice(product.getProductCost());
 			cart.setDate(new Date());
 			
 			String username=p.getName();
@@ -76,17 +79,17 @@ public class CartController {
 			cart.setStatus("NEW");
 			User user =userDao.getUserByUserName(username);
 			cart.setUserID(user.getUserId());
-			Cart existCart = cartDao.getCartByUsername(username, cart.getProductName());
+			Cart existCart = cartDAO.getCartByUsername(username, cart.getProductName());
 			if (existCart != null) {
-				int currentQuantity = cartDao.getQuantity(username, cart.getProductName());
+				int currentQuantity = cartDAO.getQuantity(username, cart.getProductName());
 				cart.setCartID(existCart.getCartID());
 				cart.setQuantity(currentQuantity + 1);
-				boolean flag = cartDao.update(cart);
+				boolean flag = cartDAO.update(cart);
 
 				if (flag) {
 
 					redirect.addFlashAttribute("success", product.getProductName() + " " + "Successfully added to cart!");
-					session.setAttribute("numberProducts", cartDao.getNumberOfProducts(username));
+					session.setAttribute("numberProducts", cartDAO.getNumberOfProducts(username));
 					return "redirect:/myCart/all";
 
 				} else {
@@ -96,12 +99,12 @@ public class CartController {
 			} else {
 				System.out.println("first time product is going to add");
 				cart.setQuantity(1);
-				boolean flag = cartDao.save(cart);
+				boolean flag = cartDAO.save(cart);
 
 				if (flag) {
 
 					redirect.addFlashAttribute("success", product.getProductName() + " " + "Successfully added to cart!");
-					session.setAttribute("numberProducts", cartDao.getNumberOfProducts(username));
+					session.setAttribute("numberProducts", cartDAO.getNumberOfProducts(username));
 					return "redirect:/myCart/all";
 
 				} else {
@@ -113,20 +116,20 @@ public class CartController {
 	@RequestMapping("/deleteItem/{id}")
 	public String deleteCartItem(@PathVariable("id") int id, Model model, RedirectAttributes redirect) {
 		try {
-			Cart cart = cartDao.getCartById(id);
+			Cart cart = cartDAO.getCartById(id);
 
 			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 			String username = auth.getName();
 
-			int checkQ = cartDao.getQuantity(username, cart.getProductName());
+			int checkQ = cartDAO.getQuantity(username, cart.getProductName());
 
 			if (checkQ > 1) {
 				cart.setQuantity(checkQ - 1);
-				cartDao.update(cart);
+				cartDAO.update(cart);
 				redirect.addFlashAttribute("success", "Cart updated successfully.");
 				return "redirect:/myCart/all";
 			} else {
-				cartDao.delete(id);
+				cartDAO.delete(id);
 				redirect.addFlashAttribute("success", "Item removed successfully.");
 				return "redirect:/myCart/all";
 			}
@@ -141,7 +144,7 @@ public class CartController {
 		try {
 			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 			String username = auth.getName();
-			int flag = cartDao.clearCart(username);
+			int flag = cartDAO.clearCart(username);
 
 			if (flag >= 1) {
 				redirect.addFlashAttribute("success", "All Items removed successfully.");

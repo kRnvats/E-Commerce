@@ -51,14 +51,14 @@
 
 <div class="container">
  <div class="row"> 
- <c:forEach var="c" items="${productList}" begin="40" end="45">      
+ <c:forEach var="c" items="${productList}" begin="40">      
  <div class="col-md-3">            
             <div class="thumbnail">
                 <div class="caption">
                     <h4>${c.productName}</h4>
                     <p>&#8377; ${c.productCost }</p>
                     <p><a href="" class="label label-danger">Zoom</a>
-                    <a href="cart" class="label label-default">Add To Cart</a></p>
+                    <a href="${pageContext.request.contextPath }/myCart/addToCart/${c.productId}" class="label label-default">Add To Cart</a></p>
                 </div>
                 <img style="height:200px;width:200px;"src="${pageContext.request.contextPath }/resources/images/${c.productId }.jpg" alt="...">
             </div>

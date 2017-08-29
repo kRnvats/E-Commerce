@@ -8,13 +8,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body style="background-color:black;">
 <jsp:include page="header.jsp" />
 <jsp.include page="product.jsp"/>
 <jsp.include page="powerwear.jsp"/>
 
 <div class="container">
-  <h2>__</h2>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -22,31 +21,30 @@
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
       <li data-target="#myCarousel" data-slide-to="3"></li>
-      
-    </ol>
-   
-    <!-- Wrapper for slides -->
+          </ol>
+       <!-- Wrapper for slides -->
     <div class="carousel-inner">
 		      <div class="item active">
  <div class="row">
  <div class="col-sm-12 col-md-12 col-lg-12">
-        <img src="resources/images/offroad-2018jumbotron.jpg" alt="KTM" style="width:100%;">
+         <img src="resources/images/offroad-2018jumbotron.jpg" alt="KTM" style="width:100%;">
         </div>
+       </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
+        <img src="resources/images/powerparts/2017-ktm-rc-200-images-3.jpg"alt="KTM" style="width:100%;">
+        	<h3>390 DUKE</h3>
         </div>
         <div class="col-sm-6 col-md-6 col-lg-6">
-        <img src="resources/images/ktm-orange-cup---home-page-tile-720x720.jpg" alt="KTM" style="width:100%;">
-        </div>
-        <div class="col-sm-6 col-md-6 col-lg-6">
-        <img src="resources/images/feature-vision-adventure-starts.jpg" alt="KTM" style="width:100%;">
+        <img src="resources/images/royalpowerparts/2017-KTM-1290-Super-Duke-R-static-08.jpg" alt="KTM" style="width:100%;">
         <div class="carousel-caption">
-          <h3>KTM FACTORY RACER</h3>
+          <h3>200 DUKE</h3>
           <p>KEEP CALM AND RIDE KTM!</p>
         </div>
          </div>
          </div>
-
       <div class="item">
       <div class="row">
+      
  <div class="col-sm-12 col-md-12 col-lg-12">
         <img src="resources/images/873824.jpg" alt="enfield" style="width:100%;">
         </div></div>

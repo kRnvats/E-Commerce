@@ -53,7 +53,7 @@ public class ProductController {
 	    {
 	    	productDao.updateProduct(p);
 	    }
-		return "redirect:/admin/product";
+	  return  "redirect:/admin/product";
 	}
 	@RequestMapping(value="/updateProduct/{productId}")
 		public String updateproduct(@PathVariable("productId")Integer pid, Model model)

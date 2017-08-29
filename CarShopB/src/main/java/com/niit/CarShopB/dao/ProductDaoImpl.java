@@ -55,8 +55,13 @@ public class ProductDaoImpl implements ProductDao{
 	}
 
 	public Product getProductId(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println("in product dao impl");
+	
+		Product pro=(Product)sessionFactory.getCurrentSession().createQuery("from Product where productId='"+id+"'");
+		System.out.println(pro.getProductId());
+		
+		System.out.println(pro.getProductName());
+		return  pro;
 	}
 
 	

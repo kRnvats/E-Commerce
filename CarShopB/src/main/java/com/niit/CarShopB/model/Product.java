@@ -21,15 +21,17 @@ public class Product {
 	private int productId;
 	private String productName;
 	private String productDesc;
-	private long productCost;
+	private int productCost;
 	
 
-	private String categoryId;
-	public String getCategoryId() {
-		return categoryId;
+	private String categoryID;
+	
+
+	public String getCategoryID() {
+		return categoryID;
 	}
-	public void setCategoryId(String categoryId) {
-		this.categoryId = categoryId;
+	public void setCategoryID(String categoryID) {
+		this.categoryID = categoryID;
 	}
 
 	@Transient
@@ -42,8 +44,8 @@ public class Product {
 	}
 
 	@ManyToOne
-	@JoinColumn(name="categoryId",insertable=false,updatable=false,nullable=false)
-	Category category;
+	@JoinColumn(name="categoryID",insertable=false,updatable=false,nullable=false)
+	private Category category;
 	
 	
 
@@ -71,11 +73,12 @@ public class Product {
 	public void setProductDesc(String productDesc) {
 		this.productDesc = productDesc;
 	}
-	public long getProductCost() {
+	public int getProductCost() {
 		return productCost;
 	}
-	public void setProductCost(long productCost) {
+	public void setProductCost(int productCost) {
 		this.productCost = productCost;
 	}
+	
 
 }

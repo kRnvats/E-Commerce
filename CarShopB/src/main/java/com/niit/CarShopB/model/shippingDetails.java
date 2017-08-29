@@ -2,7 +2,9 @@ package com.niit.CarShopB.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,8 +32,18 @@ import com.niit.CarShopB.model.User;
 		@OneToOne
 		@JoinColumn
 		private User user;
+		@OneToOne(fetch = FetchType.EAGER, mappedBy = "shippingId", cascade = CascadeType.ALL)
+		private UserOrder order;
 
 		
+		public UserOrder getOrder() {
+			return order;
+		}
+
+		public void setOrder(UserOrder order) {
+			this.order = order;
+		}
+
 		public User getUser() {
 			return user;
 		}

@@ -1,6 +1,8 @@
 package com.niit.CarShopB.model;
 import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.List;
+import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,12 +13,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
+import javax.persistence.Table;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Component
-public class Category {
+@Table(name="Category")
+public class Category implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 private int categoryID;
@@ -24,8 +28,8 @@ private String categoryName;
 private String categoryDesc;
 @Transient 
 MultipartFile image;
-@ManyToOne
-@JoinColumn(name="productId",insertable=false,updatable=false,nullable=false)
+
+
 public MultipartFile getImage() {
 	return image;
 }
@@ -33,12 +37,23 @@ public MultipartFile getImage() {
 public void setImage(MultipartFile image) {
 	this.image = image;
 }
+
 @OneToMany(mappedBy="category",fetch=FetchType.EAGER)
-Set<Product>products;
+private Set<Product> p= new HashSet<Product>();
+
+public Set<Product> getP() {
+	return p;
+}
+
+public void setP(Set<Product> p) {
+	this.p = p;
+}
+
+
 public int getCategoryID() {
 	return categoryID;
-	
 }
+
 public void setCategoryID(int categoryID) {
 	this.categoryID = categoryID;
 }
@@ -56,8 +71,5 @@ public void setCategoryDesc(String categoryDesc) {
 	this.categoryDesc = categoryDesc;
 }
 
-public String getProductId() {
-	// TODO Auto-generated method stub
-	return null;
-}
+
 }

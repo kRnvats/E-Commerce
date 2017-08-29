@@ -30,21 +30,25 @@ public class CategoryController {
 	{
 	    if(c.getCategoryID()==0)
 	    {
+	    	
 		categoryDao.addCategory(c);
+	    
 	    }
 	    
 	    else
 	    {
+	    
 	    	categoryDao.updateCategory(c);
+	   
 	    }
-		return "category";
+		return "redirect:/category";
 	}
 	@RequestMapping(value="/updateCategory/{categoryId}")
 		public String updatecategory(@PathVariable("categoryId")Integer catid, Model model)
 		{
 			model.addAttribute("category",categoryDao.categoryByid(catid));
 			model.addAttribute("categoryList",categoryDao.getAllCategory());
-			return  "Category";
+			return  "category";
 		}
 	@RequestMapping(value="/deleteCategory/{categoryId}")
 	public String deletecategory(@PathVariable("categoryId")Integer catid,Model model)
@@ -52,6 +56,6 @@ public class CategoryController {
 			model.addAttribute("category",categoryDao.categoryByid(catid));
 			categoryDao.deleteCategory(catid);
 		    model.addAttribute("categoryList",categoryDao.getAllCategory());
-			return "redirect:/Category";
+			return "redirect:/category";
 	}
 }

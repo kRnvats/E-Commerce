@@ -1,5 +1,6 @@
 package com.niit.CarShopB.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -13,12 +14,26 @@ import org.springframework.stereotype.Component;
 
 @Entity
 @Component
-public class Cart {
+public class Cart implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int cartID;
-	private Long Cost;
+
+	public int getCartID() {
+		return cartID;
+	}
+	public void setCartID(int cartID) {
+		this.cartID = cartID;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	private int price;
 	private int quantity;
 	private Date date;
 	private String productName;
@@ -27,11 +42,11 @@ public class Cart {
 	private String username;
 	
 	
-	public Long getCost() {
-		return Cost;
+	public int getPrice() {
+		return price;
 	}
-	public void setCost(Long cost) {
-		Cost = cost;
+	public void setPrice(int price) {
+		this.price = price;
 	}
 	public String getUsername() {
 		return username;
@@ -42,12 +57,7 @@ public class Cart {
 	@ManyToOne
 	@JoinColumn(name = "userID", nullable = false, updatable = false, insertable = false)
 	private User user;
-	public int getCartID() {
-		return cartID;
-	}
-	public void setCartID(int cartID) {
-		this.cartID = cartID;
-	}
+	
 	public int getQuantity() {
 		return quantity;
 	}
@@ -84,5 +94,6 @@ public class Cart {
 	public void setUser(User user) {
 		this.user = user;
 	}
+	
 	
 }

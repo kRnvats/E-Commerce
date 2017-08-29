@@ -23,18 +23,6 @@
 
 		
 		@SuppressWarnings("unchecked")
-		public List<User> getAllUsers() {
-			
-			logger.info("Starting getAllUser method of userDao");
-			try {
-				return sessionFactory.getCurrentSession().createQuery("from User").list();
-			} catch (HibernateException e) {
-				
-				e.printStackTrace();
-				throw e;
-			}
-		}
-	
 		public boolean addUser(User user) {
 
 		logger.info("Starting method save() in UserDaoImpl");
@@ -63,14 +51,83 @@
 				e.printStackTrace();
 				return false;
 			}
-		
+		}
+		public User getUsersById(int id) {
+			try {
+				@SuppressWarnings("rawtypes")
+				Query query = sessionFactory.getCurrentSession().createQuery("FROM User where userId=" + id);
+				return (User) query.uniqueResult();
+			} catch (HibernateException e) {
+				
+				e.printStackTrace();
+				throw e;
+			}
 		}
 
-		public User getUserByUserName(String username) {
-			// TODO Auto-generated method stub
-			return null;
+		public boolean getStatus(int id) {
+			User users = getUsersById(id);
+			return users.isActive();
 		}
 
-	}
-	
 		
+		public int changeStatus(int id)  {
+			try {
+				User users = getUsersById(id);
+				boolean isEnable = users.isActive();
+
+				if (isEnable) {
+					@SuppressWarnings("rawtypes")
+					Query query = sessionFactory.getCurrentSession()
+							.createQuery("UPDATE User SET enabled = " + false + " WHERE userId = " + id);
+					return query.executeUpdate();
+				} else {
+					@SuppressWarnings("rawtypes")
+					Query query = sessionFactory.getCurrentSession()
+							.createQuery("UPDATE User SET enabled = " + true + " WHERE userId = " + id);
+					return query.executeUpdate();
+				}
+			} catch (HibernateException e) {
+				
+				e.printStackTrace();
+				throw e;
+				
+			}
+		}
+		public boolean update(User u) {
+			Session s1 =sessionFactory.getCurrentSession();
+			u.setActive(true);
+			s1.update(u);
+			u.setUsername(u.getUsername());
+			
+			return true;
+		}
+
+
+		
+			public User getUserById(int id) {
+				
+				try {
+					return (User) sessionFactory.getCurrentSession().get(User.class, id);
+				} catch (HibernateException e) {
+					
+					e.printStackTrace();
+					throw e;
+					
+				}
+			}
+
+			public User getUserByUserName(String username) {
+				
+				try {
+					@SuppressWarnings("rawtypes")
+					Query query = sessionFactory.getCurrentSession().createQuery("from User where username= '" + username + "'");
+					User user = (User) query.uniqueResult();
+
+					return user;
+				} catch (HibernateException e) {
+					
+					e.printStackTrace();
+					throw e;
+				}
+			}
+}

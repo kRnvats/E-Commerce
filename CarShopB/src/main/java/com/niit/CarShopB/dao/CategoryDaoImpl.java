@@ -1,5 +1,6 @@
 package com.niit.CarShopB.dao;
 import java.util.List;
+import java.util.UUID;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -19,9 +20,9 @@ public class CategoryDaoImpl implements CategoryDao{
 	SessionFactory sessionFactory;
 	
 	public boolean addCategory(Category c) {
-		
+	
 		Session s=sessionFactory.getCurrentSession();
-		s.persist(c);
+		s.save(c);
 		return true;
 	}
 
@@ -38,17 +39,14 @@ public class CategoryDaoImpl implements CategoryDao{
 		return true;
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Category> getAllCategory() {
-		 Session s=sessionFactory.getCurrentSession();
-		Query q= s.createQuery("from Category");
-		List<Category> list=q.getResultList();
-		
-		return list;
+		return sessionFactory.getCurrentSession().createQuery("from Category").list();
 	}
 	public Category categoryByid(int catid)
 	{
 		Session s=sessionFactory.getCurrentSession();
-		Query<Category> q=s.createQuery("from Category where categoryId="+catid);
+		Query<Category> q=s.createQuery("from Category where categoryID="+catid);
 		Category catlist=(Category)q.getSingleResult();
 		return catlist;
 		

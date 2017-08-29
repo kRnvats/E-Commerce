@@ -1,8 +1,15 @@
 package com.niit.CarShopF.controller;
 
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.niit.CarShopB.dao.CategoryDao;
@@ -19,18 +26,34 @@ public class HomeController {
 	ProductDao productDao;
 	@Autowired
 	CategoryDao categoryDao;
-	
-	
+	@Autowired
+	HttpSession session;
+	@Autowired
+	SessionFactory sessionFactory;
 	@RequestMapping(value="/")
 	public String home()
 	{
-		
+		session.setAttribute("catList", categoryDao.getAllCategory());
 		return "index";
 		
 	}
-	
-	
-	@RequestMapping("product")
+
+	@Transactional
+	@RequestMapping(value="/products/{id}")
+	public String showProductsById(@PathVariable("id")String cid, Model model)
+	{
+		System.out.println("xncvmb,mnvbc"+cid);
+		List<Product> list=sessionFactory.getCurrentSession().createQuery("from Product where categoryID='"+cid+"'").list();
+		model.addAttribute("proList",list);
+		return "products";		
+		
+	}
+	@RequestMapping("/LogOut")
+	public String Logout()
+	{
+		return "redirect:/index";
+	}
+	@RequestMapping("/admin/product")
 	public String Product(Model model)
 	{
 		model.addAttribute("categoryList",categoryDao.getAllCategory());
@@ -119,14 +142,15 @@ public class HomeController {
 	
 
 	@RequestMapping("ktm")
-	public String ktm()
+	public String ktm(Model model)
 	{
+		model.addAttribute("productList",productDao.getAllProduct());
 		return"powerparts";
 		
 		
 	} 
 
-	@RequestMapping("category")
+	@RequestMapping("/admin/category")
 	public String Category(Model model)
 	{
 		model.addAttribute("categoryList",categoryDao.getAllCategory());

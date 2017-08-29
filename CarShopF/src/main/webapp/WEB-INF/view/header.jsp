@@ -1,6 +1,8 @@
-	
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+        <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
      <%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,37 +46,62 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/">HOME</a></li>
-                        <li class="active"><a href="service">SERVICE</a></li>
-                        <li><a href="product" target="_blank">PRODUCT</a></li>
-                        <li><a href="category" target="_blank">CATEGORY</a></li>
+                        <li class="active"><a href="${pageContext.request.contextPath }/">HOME</a></li>
+                        
+                         <sec:authorize access="hasRole('ROLE_ADMIN')">
+                        
+                        <li><a href="${pageContext.request.contextPath }/admin/product" >PRODUCT</a></li>
+                        <li><a href="${pageContext.request.contextPath }/admin/category">CATEGORY</a></li>
+                        
+                        </sec:authorize>
+                          <sec:authorize access="hasRole('ROLE_USER')">
                         <li>
+                            <a href="powerparts" class="dropdown-toggle" data-toggle="dropdown">CATEGORIES <b class="caret"></b></a>
+
+                            <ul class="dropdown-menu">
+                            <c:forEach items="${catList}" var="c">
+                    	    <li ><a href="${pageContext.request.contextPath }/products/${c.categoryID}">${c.categoryName}</a></li>
+                         </c:forEach>
+                      	        
+                                </ul>
+                                             
+                                   
+                                   </sec:authorize>
+    <sec:authorize access="isAnonymous()">                                   
+                                     <li>
                             <a href="powerparts" class="dropdown-toggle" data-toggle="dropdown">POWERPARTS <b class="caret"></b></a>
 
                             <ul class="dropdown-menu">
-                                <li><a href="powerparts">KTM</a></li>
-                                <li><a href="royalpowerparts">ROYAL ENFIELD</a></li>
-                                <li><a href="harleypowerparts">HARLEY DAVIDSON</a></li>
+                            <c:forEach items="${catList}" var="c">
+                    	    <li ><a href="${pageContext.request.contextPath }/products/${c.categoryID}">${c.categoryName}</a></li>
+                         </c:forEach>
+                      	        
                                 </ul>
-                                             
-                                    <li>
-                                    <a href="powerwear" class="dropdown-toggle" data-toggle="dropdown">POWERWEAR <b class="caret"></b></a>
-
-                                    <ul class="dropdown-menu">
-                                        <li><a href="powerwear"> KTM</a></li>
-                                        <li><a href="royalpowerwear"> ROYAL ENFIELD</a></li>
-                                        <li><a href="harleypowerwear"> HARLEY DAVIDSON</a></li>
-										                                        
-                                            </ul>
-                        <li class="active"><a href="#"></a></li>
-                        <li><a href="#" target="_blank"></a></li>
-                        <li><a href="#" target="_blank"></a></li>
-                        <li><a href="#" target="_blank"></a></li>
-                        <li><a href="#" target="_blank"></a></li>
+                                            </sec:authorize>
+                                 
+                              </ul>
+                          <ul class="nav navbar-nav navbar-right">
+                        <sec:authorize access="isAnonymous()">
+                        
                         <li><a href="#" target="_blank">SEARCH</a></li>
                         <li><a href="register" target="_blank">REGISTER</a></li>
-                        <li><a href="login" target="_blank">LOGIN</a></li>
+                        <li><a href="login">LOGIN</a></li>
+                       </sec:authorize>
                        
+                        <sec:authorize access="isAuthenticated()"> 
+           
+                    <li><a href="#" target="_blank">  Hey ${pageContext.request.userPrincipal.name}</a></li>
+  <li><a href="${pageContext.request.contextPath }/LogOut">Logout <span class="sr-only">(current)</span></a></li>
+                       
+                       </sec:authorize>
+                       
+                      
+                       <sec:authorize access="hasRole('ROLE_USER')"> 
+         
+              	<li> <a href="${pageContext.request.contextPath}/myCart/all"><span class="glyphicon glyphicon-shopping-cart"></span><span class="badge badge-pill badge-primary">${numberProducts }</span></a></li>
+         
+         </sec:authorize>
+          </ul>
                 </div><!--/.nav-collapse -->
                 
             </div>

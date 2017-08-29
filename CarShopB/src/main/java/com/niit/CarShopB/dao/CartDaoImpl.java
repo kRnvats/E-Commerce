@@ -2,6 +2,7 @@ package com.niit.CarShopB.dao;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -24,6 +25,7 @@ public class CartDaoImpl implements CartDao {
 	}
 
 	public boolean save(Cart cart) {
+	
 		sessionFactory.getCurrentSession().save(cart);
 		return true;
 	}

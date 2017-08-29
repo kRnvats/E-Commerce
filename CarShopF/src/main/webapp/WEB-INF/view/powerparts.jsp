@@ -58,7 +58,7 @@
                     <h4>${c.productName}</h4>
                     <p>&#8377; ${c.productCost }</p>
                     <p><a href="" class="label label-danger">Zoom</a>
-                    <a href="cart/${c.productId}" class="label label-default">Add To Cart</a></p>
+                    <a href="myCart/addToCart/${c.productId}" class="label label-default">Add To Cart</a></p>
                 </div>
                 <img style="height:200px;width:200px;"src="${pageContext.request.contextPath }/resources/images/${c.productId }.jpg" alt="...">
             </div>

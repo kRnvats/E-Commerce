@@ -37,6 +37,9 @@ import javax.persistence.Id;
 		private ShippingDetails shippingDetails;
 		@OneToOne(fetch = FetchType.EAGER, mappedBy = "user", cascade = CascadeType.ALL)
 		private BillingDetails billingDetails;
+		@OneToOne(fetch = FetchType.EAGER, mappedBy = "userr", cascade = CascadeType.ALL)
+		private UserOrder order;
+
 		private String email;
 		
 		public int getUserId() {
@@ -74,6 +77,12 @@ import javax.persistence.Id;
 		}
 		public BillingDetails getBillingDetails() {
 			return billingDetails;
+		}
+		public UserOrder getOrder() {
+			return order;
+		}
+		public void setOrder(UserOrder order) {
+			this.order = order;
 		}
 		public void setBillingDetails(BillingDetails billingDetails) {
 			this.billingDetails = billingDetails;
