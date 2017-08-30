@@ -21,7 +21,7 @@ public class CheckoutController {
 
 
 	@Autowired
-	UserDao userDAO;
+	public UserDao userDAO;
 	@Autowired
 	CategoryDao categoryDao;
 	@Autowired

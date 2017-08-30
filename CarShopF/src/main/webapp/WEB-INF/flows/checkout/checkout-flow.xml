@@ -7,9 +7,9 @@
 	<var name="order" class="com.niit.CarShopB.model.UserOrder" />
 
 	<action-state id="addCartToOrder">
-		<evaluate expression="userDao.getUserById(requestParameters.userId)"
+		<evaluate expression="UserDao.getUserById(requestParameters.userId)"
 			result="order.userr" />
-	<transition to="invalidCartWarning" on-exception="java.lang.Exception" />
+	<!--  <transition to="invalidCartWarning" on-exception="java.lang.Exception" />-->
 		<transition to="collectCustomerInfo" />
 	</action-state>
 
@@ -18,7 +18,7 @@
 		<transition on="customerInfoCollected" to= "collectShippingDetail" />
 	</view-state>
 
-	<view-state id="collectShippingDetail" view="collectShippingDetail.jsp"
+	<view-state id="collectShippingDetail" view="collectShippingDetails.jsp"
 		model="order">
 		<transition on="shippingDetailCollected" to="orderConfirmation" />
 		<transition on="backToCollectCustomerInfo" to="collectCustomerInfo" />
@@ -30,8 +30,8 @@
 	</view-state>
 
 	<action-state id="processOrder">
-		<evaluate expression="userOrderDao.addUserOrder(order)" />
-		<evaluate expression="cartDao.clearCart(order.userr.getUserName())">
+		<evaluate expression="userOrderDAO.addUserOrder(order)" />
+		<evaluate expression="cartDao.clearCart(order.userr.getUsername())">
 			<attribute name="name" value="last"></attribute>
 		</evaluate>
 		<transition on="last.success" to="thankCustomer" />

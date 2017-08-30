@@ -12,36 +12,36 @@
 
 		<div class="form-group">
 			<label for="shippingStreet">StreetName</label>
-			<form:input path="userr.shippingId.StreetName"
+			<form:input path="userr.shippingDetails.StreetName"
 				id="shippingStreet" class="form-control" />
 		</div>
 
 		<div class="form-group">
 			<label for="shippingApartmentNumber">ApartNo</label>
-			<form:input path="userr.shippingId.ApartNo"
+			<form:input path="userr.shippingDetails.ApartNo"
 				id="shippingApartmentNumber" class="form-control" />
 		</div>
 
 		<div class="form-group">
 			<label for="shippingZip">City</label>
-			<form:input path="userr.shippingId.City"
+			<form:input path="userr.shippingDetails.City"
 				id="shippingZip" class="form-control" />
 		</div>
 		<div class="form-group">
 			<label for="shippingStreet">State</label>
-			<form:input path="userr.shippingId.State"
+			<form:input path="userr.shippingDetails.State"
 				id="shippingStreet" class="form-control" />
 		</div>
 
 		<div class="form-group">
 			<label for="shippingApartmentNumber">Country</label>
-			<form:input path="userr.shippingId.Country"
+			<form:input path="userr.shippingDetails.Country"
 				id="shippingApartmentNumber" class="form-control" />
 		</div>
 
 		<div class="form-group">
 			<label for="shippingZip">Zipcode</label>
-			<form:input path="userr.shippingId.Zipcode"
+			<form:input path="userr.shippingDetails.Zipcode"
 				id="shippingZip" class="form-control" />
 		</div>
 

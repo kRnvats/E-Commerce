@@ -33,7 +33,7 @@ public class Cart implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	private int price;
+	private Long price;
 	private int quantity;
 	private Date date;
 	private String productName;
@@ -42,10 +42,11 @@ public class Cart implements Serializable {
 	private String username;
 	
 	
-	public int getPrice() {
+	
+	public Long getPrice() {
 		return price;
 	}
-	public void setPrice(int price) {
+	public void setPrice(Long price) {
 		this.price = price;
 	}
 	public String getUsername() {

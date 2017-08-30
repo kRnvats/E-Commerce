@@ -10,8 +10,7 @@
 	<div class="space"></div>
 	<form:form modelAttribute="order">
 
-		<div
-			class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 co-md-offset-3">
+		<div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 co-md-offset-3">
 
 			<div class="text-center">
 				<h1>Receipt</h1>
@@ -23,33 +22,9 @@
 					<br>
 					<b>Email: </b> ${order.userr.email }
 					<br>
-					
+					</div>
 				</div>
-				<div class="col-xs-4 col-sm-4 col-md-4 ">
-					<p>
-						<b>Shipping Date:</b>
-						<fmt:formatDate type="date" value="${now}" />
-					</p>
-				</div>
-			</div>
-<hr>
-			<div class="row">
-				<div class="col-xs-6 col-sm-6 col-md-6">
-					<address>
-						<strong>Billing Address</strong><br>
-						${order.userr.billingId.billingAddress}, ${order.userr.billingId.StreetName} <br>						
-						${order.userr.billingId.Zipcode} <br>
-					</address>
-				</div>
-				<div class="col-xs-6 col-sm-6">
-					<address>
-						<strong>Shipping Address</strong><br>
-						${order.userr.shippingId.shippingAddress}, ${order.userr.shippingId.StreetName} <br>						
-						
-						${order.userr.shippingId.Zipcode} <br>
-					</address>
-				</div>
-			</div>
+			
 			<div class="row">
 				<table class="table table-bordered">
 					<thead>

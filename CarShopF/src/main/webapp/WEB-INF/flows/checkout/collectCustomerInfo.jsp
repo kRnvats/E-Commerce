@@ -26,13 +26,13 @@
 
 		<div class="form-group">
 			<label for="billingStreet">StreetName</label>
-			<form:input path="userr.billingId.StreetName"
+			<form:input path="userr.billingDetails.StreetName"
 				id="billingStreet" class="form-control" />
 		</div>
 
 		<div class="form-group">
 			<label for="billingApartmentNumber">ApartNo</label>
-			<form:input path="userr.billingId.ApartNo"
+			<form:input path="userr.billingDetails.ApartNo"
 				id="billingApartmentNumber" class="form-control" />
 		</div>
 
@@ -40,18 +40,18 @@
 
 		<div class="form-group">
 			<label for="billingZip">City</label>
-			<form:input path="userr.billingId.City" id="billingZip"
+			<form:input path="userr.billingDetails.City" id="billingZip"
 				class="form-control" />
 		</div>
 <div class="form-group">
 			<label for="billingStreet">State</label>
-			<form:input path="userr.billingId.State"
+			<form:input path="userr.billingDetails.State"
 				id="billingStreet" class="form-control" />
 		</div>
 
 		<div class="form-group">
 			<label for="billingApartmentNumber">Country</label>
-			<form:input path="userr.billingId.Country"
+			<form:input path="userr.billingDetails.Country"
 				id="billingApartmentNumber" class="form-control" />
 		</div>
 
@@ -59,7 +59,7 @@
 
 		<div class="form-group">
 			<label for="billingZip">Zipcode</label>
-			<form:input path="userr.billingId.Zipcode" id="billingZip"
+			<form:input path="userr.billingDetails.Zipcode" id="billingZip"
 				class="form-control" />
 		</div>
 

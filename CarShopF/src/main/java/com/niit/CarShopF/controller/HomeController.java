@@ -65,14 +65,6 @@ public class HomeController {
 		
 	}
 	
-	@RequestMapping("powerparts")
-	public String powerparts(Model model)
-	{
-		model.addAttribute("productList",productDao.getAllProduct());
-		return"powerparts";
-		}
-	
-
 
 	@RequestMapping("service")
 	public String service()
@@ -81,49 +73,24 @@ public class HomeController {
 		
 		
 	}
-	@RequestMapping("powerwear")
-	public String powerwear(Model model)
-	{
-		model.addAttribute("productList",productDao.getAllProduct());
-		return "powerwear";
-		
-	}
-	@RequestMapping("royalpowerwear")
-	public String royalpowerwear(Model model)
-	{
-		model.addAttribute("productList",productDao.getAllProduct());
-		return "royalpowerwear";
-		
-	}
-	@RequestMapping("harleypowerwear")
-	public String harleypowerwear(Model model)
-	{
-		model.addAttribute("productList",productDao.getAllProduct());
-		return "harleypowerwear";
-		
-	}
-	@RequestMapping("royalpowerparts")
-	public String royalpowerparts(Model model)
-	{
-		model.addAttribute("productList",productDao.getAllProduct());
-		return "royalpowerparts";
-		
-	}
-	@RequestMapping("harleypowerparts")
-	public String harleypowerparts(Model model)
-	{
-		model.addAttribute("productList",productDao.getAllProduct());
-		return "harleypowerparts";
-		
-	}
 	
 	@RequestMapping("brand")
 	public String brand()
 	{
 		return "brand";
-		
 	}
-
+	
+		
+		@RequestMapping("/ProductDetail/{proId}")
+		public String ProductDetail(@PathVariable("proId")Integer pro,Model model1)
+		{
+			model1.addAttribute("product",productDao.getAllProduct());
+			model1.addAttribute("categoryList",categoryDao.getAllCategory());
+			model1.addAttribute("productList",productDao.getAllProduct());
+			model1.addAttribute("pro",productDao.getAllProduct());
+			return "productdetail";
+		}
+	
 	
 	@RequestMapping("login")
 	public String login()
@@ -140,15 +107,6 @@ public class HomeController {
 	}
 	
 	
-
-	@RequestMapping("ktm")
-	public String ktm(Model model)
-	{
-		model.addAttribute("productList",productDao.getAllProduct());
-		return"powerparts";
-		
-		
-	} 
 
 	@RequestMapping("/admin/category")
 	public String Category(Model model)

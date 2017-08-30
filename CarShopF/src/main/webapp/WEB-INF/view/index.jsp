@@ -46,19 +46,19 @@
       <div class="row">
       
  <div class="col-sm-12 col-md-12 col-lg-12">
-        <img src="resources/images/873824.jpg" alt="enfield" style="width:100%;">
+        <img src="resources/images/NYevent-2014-6.jpg" alt="enfield" style="width:100%;">
         </div></div>
         <div class="col-sm-6 col-md-6 col-lg-6">
+        <img src="resources/images/NYevent-2014-3.jpg" alt="enfield" style="width:100%;">
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
+        <img src="resources/images/NYevent-2014-2.jpg" alt="enfield" style="width:100%;">
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
+        <img src="resources/images/desertstorm_left-side_600x463_motorcycle.jpg" alt="enfield" style="width:100%;">
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
         <img src="resources/images/NYevent-2014-1.jpg" alt="enfield" style="width:100%;">
-        </div>
-        <div class="col-sm-6 col-md-6 col-lg-6">
-        <img src="resources/images/continentalGT_slant-front_red_600x463_motorcycle.png" alt="enfield" style="width:100%;">
-        </div>
-        <div class="col-sm-6 col-md-6 col-lg-6">
-        <img src="resources/images/biker-royal-enfield-classic-350.jpg" alt="enfield" style="width:100%;">
-        </div>
-        <div class="col-sm-6 col-md-6 col-lg-6">
-        <img src="resources/images/Achilles-a-Royal-Enfield-Scrambler-by-Bulleteer-Customs.jpg">
         <div class="carousel-caption">
           <h3>I NEVER LOSE.I ONLY RUN OUT OF LAPS,GAS,OR TIME. </h3>
           <p>Thank you, Chicago!</p>

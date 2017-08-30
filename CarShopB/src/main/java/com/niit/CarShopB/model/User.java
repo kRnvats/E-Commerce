@@ -2,6 +2,7 @@ package com.niit.CarShopB.model;
 
 
 	import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -10,7 +11,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-	import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 	import org.springframework.stereotype.Component;
 
@@ -93,6 +95,13 @@ import javax.persistence.Id;
 		public void setEmail(String email) {
 			this.email = email;
 		}
-		
+		@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+		private List<Cart> cartItems;
+		public List<Cart> getCartItems() {
+			return cartItems;
+		}
+		public void setCartItems(List<Cart> cartItems) {
+			this.cartItems = cartItems;
+		}
 	}
 	

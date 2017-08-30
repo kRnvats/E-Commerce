@@ -67,11 +67,11 @@ public class CartController {
 	public String addToCart(@PathVariable("id") int id, RedirectAttributes redirect, Model model,Principal p) {
 		
 			Cart cart = new Cart();
-			Product product = productDao.getProductId(id);
+			Product product = productDao.ProductByid(id);
 			System.out.println(product.getProductName());
 			cart.setProductName(product.getProductName());
 			
-			cart.setPrice(product.getProductCost());
+			cart.setPrice(Long.parseLong(product.getProductCost()));
 			cart.setDate(new Date());
 			
 			String username=p.getName();

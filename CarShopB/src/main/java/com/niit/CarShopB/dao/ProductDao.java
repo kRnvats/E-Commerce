@@ -9,7 +9,7 @@ public interface ProductDao {
 	public boolean updateProduct(Product p);
 	List<Product>getAllProduct();
 	Product ProductByid(int pid);
-	public Product getProductId(int id);	
+		
 	
 }
 

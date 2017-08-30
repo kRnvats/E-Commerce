@@ -21,7 +21,7 @@ public class Product {
 	private int productId;
 	private String productName;
 	private String productDesc;
-	private int productCost;
+	private String productCost;
 	
 
 	private String categoryID;
@@ -73,12 +73,13 @@ public class Product {
 	public void setProductDesc(String productDesc) {
 		this.productDesc = productDesc;
 	}
-	public int getProductCost() {
+	public String getProductCost() {
 		return productCost;
 	}
-	public void setProductCost(int productCost) {
+	public void setProductCost(String productCost) {
 		this.productCost = productCost;
 	}
+	
 	
 
 }
